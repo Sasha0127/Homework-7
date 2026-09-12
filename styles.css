@@ -8,7 +8,9 @@
   font-family: "Mulish";
   src: url("./fonts/Mulish-VariableFont_wght.ttf");
 } */
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Pliant:wght@100..900&display=swap");
+
+/* Є 2 способи підключення шрифтів через css - import або font-face. Ці два способи є взаємнозамінними, використовуємо один із них.*/
+/* @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Pliant:wght@100..900&display=swap"); */
 @font-face {
   font-family: "Pliant", sans-serif;
   src: url(./fonts/Pliant-Regular.ttf);
@@ -30,14 +32,53 @@
   --black-color: #000;
   --white-color: #fff;
 }
-.footer {
-  background: linear-gradient(
-    183deg,
-    var(--footer-start)-8.57%,
-    var(--footer-end) 82.96%
-  );
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 26px;
+  margin-bottom: 138px;
+}
+.header-link {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: #462e6a;
+  font-family: Mulish;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.header-nav-list {
+  display: flex;
+  gap: 40px;
+}
+.link {
+  color: #1f1534;
+  opacity: 0.5;
+  font-family: Mulish;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.active {
+  color: #2e4e92;
+  opacity: 1;
 }
 .home-section {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+.home-title {
   color: var(--title-color);
   font-family: "Pliant";
   font-size: 48px;
@@ -45,8 +86,72 @@
   font-weight: 700;
   line-height: 56px;
 }
+.home-button {
+  margin-left: 43px;
+}
+
+.doctor-titel {
+  color: #462e6a;
+  text-align: center;
+  font-family: Mulish;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 56px; /* 124.444% */
+}
 .doctor-text {
   color: var(--doctor-text-color);
+  color: #ccd2e9;
+  text-align: center;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family: Roboto;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 27px; /* 142.105% */
+  letter-spacing: 0.38px;
+}
+.services-text {
+  color: #000;
+  text-align: center;
+  font-family: Mulish;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 56px; /* 233.333% */
+}
+.text {
+  color: #7d7987;
+  font-family: Mulish;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px; /* 175% */
+}
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 800px;
+  margin: 40px auto;
+  padding: 0;
+}
+.services-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-basis: calc((100% - 3 * 60px) / 3);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  background: #fff;
+  color: #000;
+
+  /* drop shadow */
+  box-shadow: 10px 40px 50px 0 rgba(229, 233, 246, 0.4);
 }
 .highlighted-text {
   color: var(--highlighted-text);
@@ -86,6 +191,13 @@ button {
   line-height: 60px;
   border-radius: 55px;
   background: #458ff6;
+}
+.footer {
+  background: linear-gradient(
+    183deg,
+    var(--footer-start)-8.57%,
+    var(--footer-end) 82.96%
+  );
 }
 .footer-text {
   color: var(--white-color);
